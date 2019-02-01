@@ -1,0 +1,39 @@
+<!-- Generated template for the NewTaskComponent component -->
+<div>
+    <ion-navbar color="primary">
+      <ion-title>Test</ion-title>
+      <ion-buttons start [hidden]="editMode">
+        <button ion-button icon-only (click)="editTask()">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button ion-button outline (click)="addTaskToCategory($event)" clear [hidden]="viewMode">
+          category
+        </button>
+        <button ion-button outline end (click)="saveNewTask()" clear [hidden]="viewMode">
+          Save
+        </button>
+        <button ion-button icon-only (click)="closeModal()" color="danger">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+    <div>
+    </div>
+    <form>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="title" name="title" placeholder="Heading" [readonly]="viewMode"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" [(ngModel)]="cost" name="cost" placeholder="Cost" [readonly]="viewMode"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-datetime placeholder="Spend Date" display-format="MMM DD, YYYY HH:mm"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-textarea type="text" [(ngModel)]="subject" id="subject" name="subject" placeholder="Note" [readonly]="viewMode"
+          id="txtarea-height" style="height:80%;" [attr.rows]="25"></ion-textarea>
+      </ion-item>
+    </form>
+  </div>
